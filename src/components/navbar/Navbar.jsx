@@ -1,9 +1,10 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import { colors } from '../../assets/colors'
 
 const NavbarWrapper = styled.div`
   height: 50px;
-  background-color: #003580;
+  background-color: ${colors.background};
   display: flex;
   justify-content: center;
 `
@@ -24,7 +25,7 @@ const NavButton = styled.button`
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: #003580;
+  color: ${colors.background};
 `
 
 export const Navbar = () => {

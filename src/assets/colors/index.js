@@ -8,8 +8,8 @@ export const colors = {
   gray: "#616161",
   lightGray: "#8E8E8E",
   darkGray: "#373737",
-  background: "#F5F5F6",
-  backgroundDark: "#E1E2E1",
+  background: "#003580",
+  backgroundButton: "#0071c2",
   // ShallowPink2:
   shallowPink: "#F48FB126",
 };
