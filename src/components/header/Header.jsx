@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
-import second from '@fortawesome/fontawesome-svg-core'
-import { faBed, faCar, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
+import { faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const HeaderWrapper = styled.header`
   background-color: #003580;
@@ -68,7 +70,7 @@ const HeaderSearchInput = styled.input`
   border: none;
   outline: none;
 `
-const HeaderSearchText  = styled.input`
+const HeaderSearchText  = styled.span`
   color: lightgray;
   cursor: pointer;
 `
@@ -107,8 +109,39 @@ const OptionCounterButton = styled.div`
     cursor: not-allowed;
   }
 `
+export const Header = ({ type }) => {
 
-export const Header = () => {
+  const [destination, setDestination] = useState("");
+  const [openDate, setOpenDate] = useState(false);
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+  const [openOptions, setOpenOptions] = useState(false);
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate("/hotels", { state: { destination, date, options } });
+  };
+
+  const handleOption = (name, operation) => {
+    setOptions((prev) => {
+      return {
+        ...prev,
+        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+      };
+    });
+  };
+
   return (
     <HeaderWrapper>
       <Container
@@ -159,13 +192,13 @@ export const Header = () => {
               </HeaderSearchItem>
               <HeaderSearchItem>
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-                <HeaderSearchText
+                {/* <HeaderSearchText
                   onClick={() => setOpenDate(!openDate)}
                 >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
                   date[0].endDate,
                   "MM/dd/yyyy"
-                )}`}</HeaderSearchText>
-                {openDate && (
+                )}`}</HeaderSearchText> */}
+                {/* {openDate && (
                   <DateRange
                     editableDateInputs={true}
                     onChange={(item) => setDate([item.selection])}
@@ -174,7 +207,7 @@ export const Header = () => {
                     className="date"
                     minDate={new Date()}
                   />
-                )}
+                )} */}
               </HeaderSearchItem>
               <HeaderSearchItem>
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
@@ -188,7 +221,6 @@ export const Header = () => {
                       <OptionCounter>
                         <OptionCounterButton
                           disabled={options.adult <= 1}
-                          className="optionCounterButton"
                           onClick={() => handleOption("adult", "d")}
                         >
                           -
@@ -205,53 +237,50 @@ export const Header = () => {
                     </OptionItem>
                     <OptionItem>
                       <span className="optionText">Children</span>
-                      <div className="optionCounter">
-                        <button
+                      <OptionCounter>
+                        <OptionCounterButton
                           disabled={options.children <= 0}
                           className="optionCounterButton"
                           onClick={() => handleOption("children", "d")}
                         >
                           -
-                        </button>
+                        </OptionCounterButton>
                         <span className="optionCounterNumber">
                           {options.children}
                         </span>
-                        <button
-                          className="optionCounterButton"
+                        <OptionCounterButton
                           onClick={() => handleOption("children", "i")}
                         >
                           +
-                        </button>
-                      </div>
+                        </OptionCounterButton>
+                      </OptionCounter>
                     </OptionItem>
                     <OptionItem>
                       <span className="optionText">Room</span>
-                      <div className="optionCounter">
-                        <button
+                      <OptionCounter>
+                        <OptionCounterButton
                           disabled={options.room <= 1}
-                          className="optionCounterButton"
                           onClick={() => handleOption("room", "d")}
                         >
                           -
-                        </button>
+                        </OptionCounterButton>
                         <span className="optionCounterNumber">
                           {options.room}
                         </span>
-                        <button
-                          className="optionCounterButton"
+                        <OptionCounterButton
                           onClick={() => handleOption("room", "i")}
                         >
                           +
-                        </button>
-                      </div>
+                        </OptionCounterButton>
+                      </OptionCounter>
                     </OptionItem>
                   </Options>
                 )}
               </HeaderSearchItem>
               <HeaderSearchItem>
-                <button className="headerBtn" onClick={handleSearch}>
+                <HeaderButton onClick={handleSearch}>
                   Search
-                </button>
+                </HeaderButton>
               </HeaderSearchItem>
             </HeaderSearch>
           </>
