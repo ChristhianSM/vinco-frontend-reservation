@@ -62,7 +62,7 @@ export const Header = ({ type }) => {
     <Styled.HeaderWrapper>
       <Styled.Container
         className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
+          type === "list" ? "headerContainer list-mode" : "headerContainer"
         }
       >
         <Styled.HeaderList>

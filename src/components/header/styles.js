@@ -13,6 +13,9 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1024px;
   margin: 20px 0px 100px 0px;
+  &.list-mode {
+    margin: 20px 0px 0px 0px;
+  }
 `
 export const HeaderList = styled.div`
   display: flex;
@@ -115,6 +118,9 @@ export const OptionCounterButton = styled.button`
 
   &:disabled{
     cursor: not-allowed;
+    background-color: lightgray;
+    border-color: lightgray;
+    color: gray;
   }
 `
 export const OptionCounterNumber = styled.span`
