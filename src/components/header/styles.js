@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { DateRange } from "react-date-range"
 import { colors } from "../../assets/colors"
 
 export const HeaderWrapper = styled.header`
@@ -70,6 +71,12 @@ export const HeaderSearchText  = styled.span`
   color: lightgray;
   cursor: pointer;
 `
+
+export const Date = styled(DateRange)`
+  position: absolute;
+  top: 50px;
+  z-index: 2;
+`
 export const Options = styled.div`
    z-index: 2;
   position: absolute;
@@ -93,7 +100,7 @@ export const OptionCounter = styled.div`
   font-size: 12px;
   color: black;
 `
-export const OptionCounterButton = styled.div`
+export const OptionCounterButton = styled.button`
    width: 30px;
   height: 30px;
   display: flex;

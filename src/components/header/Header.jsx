@@ -2,9 +2,14 @@ import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
 import { faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
+import { DateRange } from 'react-date-range'
 import { useNavigate } from 'react-router-dom'
 import { HeaderListItem } from './components/HeaderListItem'
+import { OptionsCounter } from './components/OptionsCounter'
 import * as Styled from './styles';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { format } from 'date-fns'
 
 const itemList = [
   { id: 1, icon : faBed, title: "Stays"},
@@ -12,6 +17,12 @@ const itemList = [
   { id: 3, icon : faCar, title: "Car rentals"},
   { id: 4, icon : faBed, title: "Attractions"},
   { id: 5, icon : faTaxi, title: "Airport taxis"},
+];
+
+const listOptions = [
+  { id: 1, name: "adult"},
+  { id: 2, name: "children"},
+  { id: 3, name: "room"},
 ]
 
 export const Header = ({ type }) => {
@@ -82,14 +93,11 @@ export const Header = ({ type }) => {
               </Styled.HeaderSearchItem>
               <Styled.HeaderSearchItem>
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-                {/* <HeaderSearchText
-                  onClick={() => setOpenDate(!openDate)}
-                >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
-                  date[0].endDate,
-                  "MM/dd/yyyy"
-                )}`}</HeaderSearchText> */}
-                {/* {openDate && (
-                  <DateRange
+                <Styled.HeaderSearchText onClick={() => setOpenDate(!openDate)} >
+                  {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`}
+                </Styled.HeaderSearchText>
+                {openDate && (
+                  <Styled.Date
                     editableDateInputs={true}
                     onChange={(item) => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
@@ -97,7 +105,7 @@ export const Header = ({ type }) => {
                     className="date"
                     minDate={new Date()}
                   />
-                )} */}
+                )}
               </Styled.HeaderSearchItem>
               <Styled.HeaderSearchItem>
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
@@ -108,64 +116,16 @@ export const Header = ({ type }) => {
                 </Styled.HeaderSearchText>
                 {openOptions && (
                   <Styled.Options>
-                    <Styled.OptionItem>
-                      <span className="optionText">Adult</span>
-                      <Styled.OptionCounter>
-                        <Styled.OptionCounterButton
-                          disabled={options.adult <= 1}
-                          onClick={() => handleOption("adult", "d")}
-                        >
-                          -
-                        </Styled.OptionCounterButton>
-                        <Styled.OptionCounterNumber>
-                          {options.adult}
-                        </Styled.OptionCounterNumber>
-                        <Styled.OptionCounterButton
-                          onClick={() => handleOption("adult", "i")}
-                        >
-                          +
-                        </Styled.OptionCounterButton>
-                      </Styled.OptionCounter>
-                    </Styled.OptionItem>
-                    <Styled.OptionItem>
-                      <span className="optionText">Children</span>
-                      <Styled.OptionCounter>
-                        <Styled.OptionCounterButton
-                          disabled={options.children <= 0}
-                          className="optionCounterButton"
-                          onClick={() => handleOption("children", "d")}
-                        >
-                          -
-                        </Styled.OptionCounterButton>
-                        <Styled.OptionCounterNumber>
-                          {options.children}
-                        </Styled.OptionCounterNumber>
-                        <Styled.OptionCounterButton
-                          onClick={() => handleOption("children", "i")}
-                        >
-                          +
-                        </Styled.OptionCounterButton>
-                      </Styled.OptionCounter>
-                    </Styled.OptionItem>
-                    <Styled.OptionItem>
-                      <span className="optionText">Room</span>
-                      <Styled.OptionCounter>
-                        <Styled.OptionCounterButton
-                          disabled={options.room <= 1}
-                          onClick={() => handleOption("room", "d")}
-                        >
-                          -
-                        </Styled.OptionCounterButton>
-                        <Styled.OptionCounterNumber>
-                          {options.room}
-                        </Styled.OptionCounterNumber>
-                        <Styled.OptionCounterButton
-                          onClick={() => handleOption("room", "i")}
-                        >
-                          +
-                        </Styled.OptionCounterButton>
-                      </Styled.OptionCounter>
-                    </Styled.OptionItem>
+                    {
+                      listOptions.map( option => (
+                        <OptionsCounter 
+                          key={ option.id } 
+                          { ...option }
+                          handleOption = { handleOption }
+                          options = { options }
+                        />
+                      ))
+                    }
                   </Styled.Options>
                 )}
               </Styled.HeaderSearchItem>
