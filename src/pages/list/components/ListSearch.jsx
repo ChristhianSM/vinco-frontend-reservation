@@ -12,10 +12,11 @@ export const ListSearch = ({ destination, setOpenDate, openDate, date, setDate, 
       </Styled.ListItem>
       <Styled.ListItem>
         <label>Check-in Date</label>
-        <span onClick={() => setOpenDate(!openDate)}>{`${format(
-          date[0].startDate,
-          "MM/dd/yyyy"
-        )} to ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
+        <span onClick={() => setOpenDate(!openDate)}>
+          {
+            `${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`
+          }
+        </span>
         {openDate && (
           <DateRange
             onChange={(item) => setDate([item.selection])}

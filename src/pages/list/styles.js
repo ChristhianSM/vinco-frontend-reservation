@@ -21,7 +21,7 @@ export const ListSearch = styled.div`
   position: sticky;
   top: 10px;
   height: max-content;
-  button {
+  >button {
     padding: 10px;
     background-color: #0071c2;
     color: white;
@@ -50,7 +50,7 @@ export const ListItem = styled.div`
     border: none;
     padding: 5px;
   }
-  span {
+  >span {
     height: 30px;
     padding: 5px;
     background-color: white;
