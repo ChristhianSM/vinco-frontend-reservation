@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import { Featured } from '../../components/featured/Featured'
+import FeaturedProperties from '../../components/featuredProperty/FeaturedProperty'
 import { Header } from '../../components/header/Header'
 import { Navbar } from '../../components/navbar/Navbar'
 import PropertyList from '../../components/propertyList/PropertyList'
@@ -26,7 +27,7 @@ export const Home = () => {
         <HomeTitle> Browse by property type </HomeTitle>
         <PropertyList />
         <HomeTitle> Homes guests love </HomeTitle>
-        <PropertyList />
+        <FeaturedProperties />
       </HomeContainer>
     </>
   )
