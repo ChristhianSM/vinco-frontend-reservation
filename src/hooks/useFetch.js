@@ -20,7 +20,7 @@ export const useFetch = (url) => {
     };
 
     fetchData();
-  }, [url]);
+  }, []);
   
   const reFetch = async() => {
     setloading(true);

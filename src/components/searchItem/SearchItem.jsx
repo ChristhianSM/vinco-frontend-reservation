@@ -1,21 +1,24 @@
+import { Link } from 'react-router-dom';
 import * as Styled from './styles';
 
-export const SearchItem = () => {
+export const SearchItem = ({ hotel }) => {
+  const { photos, name, distance, address, description, rating, rooms, cheapesPrice  } = hotel;
+
   return (
     <Styled.Wrapper>
       <Styled.Img
-        src="https://cf.bstatic.com/xdata/images/hotel/square600/261707778.webp?k=fa6b6128468ec15e81f7d076b6f2473fa3a80c255582f155cae35f9edbffdd78&o=&s=1"
-        alt=""
+        src= { photos[0] }
+        alt="Photo Hotel"
       />
       <Styled.Description>
-        <Styled.Title>Tower Street Apartments</Styled.Title>
-        <Styled.Distance>500m from center</Styled.Distance>
+        <Styled.Title>{ name }</Styled.Title>
+        <Styled.Distance>{ distance }m from center</Styled.Distance>
         <Styled.TaxiOp>Free airport taxi</Styled.TaxiOp>
         <Styled.Subtitle>
           Studio Apartment with Air conditioning
         </Styled.Subtitle>
         <Styled.Features>
-          Entire studio • 1 bathroom • 21m² 1 full bed
+          { description }
         </Styled.Features>
         <Styled.CancelOp>Free cancellation </Styled.CancelOp>
         <Styled.CancelOpSubtitle>
@@ -23,14 +26,19 @@ export const SearchItem = () => {
         </Styled.CancelOpSubtitle>
       </Styled.Description>
       <Styled.Details>
-        <Styled.Rating>
-          <span>Excellent</span>
-          <button>8.9</button>
-        </Styled.Rating>
+        {
+          rating &&
+          <Styled.Rating>
+            <span>Excellent</span>
+            <button>{ rating }</button>
+          </Styled.Rating>
+        }
         <Styled.DetailsTexts>
-          <Styled.Price>$112</Styled.Price>
+          <Styled.Price>$ {cheapesPrice}</Styled.Price>
           <Styled.TaxOp>Includes taxes and fees</Styled.TaxOp>
-          <Styled.CheckButton>See availability</Styled.CheckButton>
+          <Link to={`/hotels/${ hotel._id }`}>
+            <Styled.CheckButton>See availability</Styled.CheckButton>
+          </Link>
         </Styled.DetailsTexts>
       </Styled.Details>
     </Styled.Wrapper>

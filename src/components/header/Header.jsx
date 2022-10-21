@@ -46,7 +46,12 @@ export const Header = ({ type }) => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
+    navigate("/hotels", 
+      { 
+        state: 
+        { destination: destination === "" ? "Peru" : destination, date, options } 
+      }
+    );
   };
 
   const handleOption = (name, operation) => {
