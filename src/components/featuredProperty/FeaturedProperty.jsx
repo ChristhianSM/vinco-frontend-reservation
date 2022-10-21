@@ -46,14 +46,13 @@ const FpRating = styled.div`
 const FeaturedProperties = () => {
 
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
-
   return (
     <Wrapper>
       { loading 
         ?  "Loading"
         : <>
           { data.map( hotel => (
-            <FpItem key={ hotel.id }>
+            <FpItem key={ hotel._id }>
               <FpImg
                 src= { hotel.photos[0] }
                 alt=""
