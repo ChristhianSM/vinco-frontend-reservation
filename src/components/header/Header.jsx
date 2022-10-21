@@ -11,6 +11,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns'
 import { useSearch } from '../../context/SearchContext/useSearch'
+import { useAuth } from '../../context/AuthContext/useAuth'
 
 const itemList = [
   { id: 1, icon : faBed, title: "Stays"},
@@ -29,6 +30,7 @@ const listOptions = [
 export const Header = ({ type }) => {
 
   const { addSearch } = useSearch();
+  const { user } = useAuth();
 
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
@@ -90,7 +92,10 @@ export const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </Styled.HeaderDescription>
-            <Styled.HeaderButton>Sign in / Register</Styled.HeaderButton>
+            {
+              !user && 
+              <Styled.HeaderButton>Sign in / Register</Styled.HeaderButton>
+            }
             <Styled.HeaderSearch>
               <Styled.HeaderSearchItem>
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

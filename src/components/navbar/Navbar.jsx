@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { colors } from '../../assets/colors'
+import { useAuth } from '../../context/AuthContext/useAuth'
 
 const NavbarWrapper = styled.div`
   height: 50px;
@@ -32,16 +33,20 @@ const NavButton = styled.button`
 `
 
 export const Navbar = () => {
+  const { user } = useAuth();
   return (
     <NavbarWrapper>
       <Wrapper>
         <Link to={"/"}>
           <Logo>VincoReservation</Logo>
         </Link> 
-        <NavItems>
-          <NavButton>Register</NavButton>
-          <NavButton>Login</NavButton>
-        </NavItems>
+        {
+          user ? user.username :
+          <NavItems>
+            <NavButton>Register</NavButton>
+            <NavButton>Login</NavButton>
+          </NavItems>
+        }
       </Wrapper>
     </NavbarWrapper>
   )

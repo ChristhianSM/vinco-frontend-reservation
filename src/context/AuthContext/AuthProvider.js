@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
 import { session_login } from "../../services/auth-services";
+import { registerUser } from "../../services/user-services";
 import { AuthContext, initial_state } from "./AuthContext";
 import { authReducer } from "./authReducer";
 
@@ -27,13 +27,30 @@ export const AuthContextProvider = ({children}) => {
     }
   }
 
+  const register = async (credentials) => {
+    dispatch( { type: "LOGIN_START" })
+    try {
+      const data = await registerUser(credentials);
+      dispatch({ type: "REGISTER_USER", payload: data });
+      return {
+        status: true
+      }
+    } catch (error) {
+      dispatch({ type: "LOGIN_FAILURE", payload: error.response.data });
+      return {
+        status: false
+      }
+    }
+  }
+
   return (
     <AuthContext.Provider
       value = {{
         user: state.user,
         loading: state.loading,
         error: state.error,
-        login
+        login,
+        register
       }}
     >
       { children }

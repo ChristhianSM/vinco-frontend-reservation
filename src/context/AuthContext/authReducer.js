@@ -8,6 +8,7 @@ export const authReducer = (state, action) => {
         loading: true
       };
     case "LOGIN_SUCCESS":
+    case "REGISTER_USER":
       return {
         loading: false,
         user: action.payload,
