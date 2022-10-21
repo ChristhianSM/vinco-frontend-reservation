@@ -5,3 +5,19 @@ export const dayDifference = (date1, date2) => {
   const diffDays = Math.ceil( timeDiff / MILISECONDS_PER_DAY );
   return diffDays;
 }
+
+export const getDatesInRange = (startDate, endDate) => {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  const date = new Date(start.getTime());
+
+  const dates = [];
+
+  while (date <= end) {
+    dates.push(new Date(date).getTime());
+    date.setDate(date.getDate() + 1);
+  }
+
+  return dates;
+};

@@ -12,9 +12,11 @@ import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 import styled from "@emotion/styled";
 import { useFetch } from "../../hooks/useFetch";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useSearch } from "../../context/SearchContext/useSearch";
 import { dayDifference } from "../../utils/helpers";
+import { useAuth } from "../../context/AuthContext/useAuth";
+import { Reserve } from "../../components/reserve/Reserve";
 
 export const HotelContainer = styled.div`
   display: flex;
@@ -150,7 +152,11 @@ export const Arrow = styled(FontAwesomeIcon)`
 `
 export const Hotel = () => {
   const { dates, options } = useSearch();
+  const { user } = useAuth();
+
   const { id } = useParams();
+  const navigate =  useNavigate();
+
   const { data, loading, error } = useFetch(`/hotels/${ id }`);
 
   // Obtenemos las fechas para poder hacer el calculo del precio 
@@ -158,6 +164,7 @@ export const Hotel = () => {
 
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -175,6 +182,14 @@ export const Hotel = () => {
 
     setSlideNumber(newSlideNumber)
   };
+
+  const handleReservation = () => {
+    if (user) {
+      setOpenModal(true);
+    }else{
+      navigate("/login");
+    }
+  }
 
   return (
     <div>
@@ -242,12 +257,15 @@ export const Hotel = () => {
                 <h2>
                   <b>$ { days *  data.cheapesPrice * options.room }</b> ({days} nights)
                 </h2>
-                <button>Reserve or Book Now!</button>
+                <button onClick={ handleReservation }>Reserve or Book Now!</button>
               </HotelDetailsPrice>
             </HotelDetails>
           </HotelWrapper>
           <MailList />
           <Footer />
+          {
+            openModal && <Reserve setOpenModal={setOpenModal} hotelId = {id}/>
+          }
         </HotelContainer>
       }
     </div>
