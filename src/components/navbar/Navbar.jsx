@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { colors } from '../../assets/colors'
 
 const NavbarWrapper = styled.div`
@@ -16,7 +17,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 `
-const Logo = styled.span`
+const Logo = styled(Link)`
+  font-size: 2rem;
+  color: white;
   Font-weight: 500;
 `
 const NavItems = styled.div``
@@ -32,7 +35,9 @@ export const Navbar = () => {
   return (
     <NavbarWrapper>
       <Wrapper>
-        <Logo>VincoReservation</Logo>
+        <Link to={"/"}>
+          <Logo>VincoReservation</Logo>
+        </Link> 
         <NavItems>
           <NavButton>Register</NavButton>
           <NavButton>Login</NavButton>

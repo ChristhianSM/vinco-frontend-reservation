@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { useFetch } from "../../hooks/useFetch"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -43,6 +44,9 @@ const FpRating = styled.div`
   }
 `
 const FeaturedProperties = () => {
+
+  const { data, loading, error } = useFetch("/hotels/countByType");
+
   return (
     <Wrapper>
       <FpItem>
