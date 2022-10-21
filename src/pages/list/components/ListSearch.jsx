@@ -7,8 +7,8 @@ export const ListSearch = ({
     setDestination,
     setOpenDate, 
     openDate, 
-    date, 
-    setDate, 
+    dates, 
+    setDates, 
     options, 
     filters, 
     setFilters,
@@ -41,14 +41,14 @@ export const ListSearch = ({
         <label>Check-in Date</label>
         <span onClick={() => setOpenDate(!openDate)}>
           {
-            `${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`
+            `${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(dates[0].endDate, "MM/dd/yyyy")}`
           }
         </span>
         {openDate && (
           <DateRange
-            onChange={(item) => setDate([item.selection])}
+            onChange={(item) => setDates([item.selection])}
             minDate={new Date()}
-            ranges={date}
+            ranges={dates}
           />
         )}
       </Styled.ListItem>

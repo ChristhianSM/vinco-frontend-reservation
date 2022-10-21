@@ -10,6 +10,7 @@ import * as Styled from './styles';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns'
+import { useSearch } from '../../context/SearchContext/useSearch'
 
 const itemList = [
   { id: 1, icon : faBed, title: "Stays"},
@@ -27,9 +28,11 @@ const listOptions = [
 
 export const Header = ({ type }) => {
 
+  const { addSearch } = useSearch();
+
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
-  const [date, setDate] = useState([
+  const [dates, setDates] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
@@ -46,10 +49,11 @@ export const Header = ({ type }) => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
+    addSearch({destination, dates, options});
     navigate("/hotels", 
       { 
         state: 
-        { destination: destination === "" ? "Peru" : destination, date, options } 
+        { destination: destination === "" ? "Peru" : destination, dates, options } 
       }
     );
   };
@@ -99,14 +103,14 @@ export const Header = ({ type }) => {
               <Styled.HeaderSearchItem>
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <Styled.HeaderSearchText onClick={() => setOpenDate(!openDate)} >
-                  {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`}
+                  {`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}
                 </Styled.HeaderSearchText>
                 {openDate && (
                   <Styled.Date
                     editableDateInputs={true}
-                    onChange={(item) => setDate([item.selection])}
+                    onChange={(item) => setDates([item.selection])}
                     moveRangeOnFirstSelection={false}
-                    ranges={date}
+                    ranges={dates}
                     className="date"
                     minDate={new Date()}
                   />

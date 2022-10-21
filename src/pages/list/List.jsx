@@ -11,7 +11,7 @@ import { useFetch } from "../../hooks/useFetch";
 export const List = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
-  const [date, setDate] = useState(location.state.date);
+  const [dates, setDates] = useState(location.state.dates);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   const [filters, setFilters] = useState({
@@ -29,7 +29,7 @@ export const List = () => {
   const handleSearchFilters = () => {
     reFetch()
   }
-
+  
   return (
     <div>
       <Navbar />
@@ -39,8 +39,8 @@ export const List = () => {
           <ListSearch 
             destination={ destination }
             setDestination = { setDestination }
-            date = { date }
-            setDate = { setDate }
+            dates = { dates }
+            setDates = { setDates }
             openDate = { openDate }
             setOpenDate = { setOpenDate }
             options = { options }

@@ -13,6 +13,8 @@ import Footer from "../../components/footer/Footer";
 import styled from "@emotion/styled";
 import { useFetch } from "../../hooks/useFetch";
 import { useLocation, useParams } from "react-router-dom";
+import { useSearch } from "../../context/SearchContext/useSearch";
+import { dayDifference } from "../../utils/helpers";
 
 export const HotelContainer = styled.div`
   display: flex;
@@ -147,8 +149,12 @@ export const Arrow = styled(FontAwesomeIcon)`
   cursor: pointer;
 `
 export const Hotel = () => {
+  const { dates, options } = useSearch();
   const { id } = useParams();
   const { data, loading, error } = useFetch(`/hotels/${ id }`);
+
+  // Obtenemos las fechas para poder hacer el calculo del precio 
+  const days = dayDifference( dates[0].endDate, dates[0].startDate);
 
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
@@ -234,7 +240,7 @@ export const Hotel = () => {
                   excellent location score of 9.8!
                 </span>
                 <h2>
-                  <b>$945</b> (9 nights)
+                  <b>$ { days *  data.cheapesPrice * options.room }</b> ({days} nights)
                 </h2>
                 <button>Reserve or Book Now!</button>
               </HotelDetailsPrice>
