@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Reservacion de hoteles : VincoReservation  :department_store:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Vinco : Desafio de la empresa Vinco
 
-## Available Scripts
+Aplicacion web donde podrás reservar hoteles de diferentes partes del Perú, por el momento solo hay 3 diferentes ciudades del Perú (Piura, Lima y Iquitos) pronto habrán más.
 
-In the project directory, you can run:
+## Que puedo hacer en VincoReservation :
 
-### `npm start`
+* Iniciar Sesion con un usuario y contraseña validas.
+* Registrarme con un username, email y password.
+* Visualizar los diferentes hoteles del Perú
+* Busqueda de Hoteles por ciudad, precio minimo y precio maximo.
+* Visualizacion de fotos del hotel elegido.
+* Reservar un hotel con sus diferentes opciones, como el numero de habitaciones y la cantidad de personas 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Temas comprendidos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* React
+* React Hooks : useState, useEffect, useParams, useLocation, useReducer.
+* React Router Dom
+* Context Api
+* Custom Hooks
 
-### `npm test`
+## Librerias usadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Libreria | Descripcion |
+| ------ | ------ |
+| @emotion/styled 11.10.4 | Estilos Css |
+| @fortawesome/free-regular-svg-icons 6.2.0 | Iconos |
+| react-router-dom 6.4.2 | Navegacion de la pagina web. |
+| spinners-react 1.0.6 | Spinner para loading. |
+| react-date-range 1.4.0 | Dates. |
+| date-fns 2.29.3 | Para manejo de Fechas. |
+| axios 1.1.3 | Para realizar peticiones fetch. |
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="center" style="margin-bottom:30px">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/login.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/perfil.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/home.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/descProduct.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/categories.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/shopping-cart.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/payment.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/form-shopping.JPG" width="400" title="hover text">
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Instalacion 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para desarollo, clone el archivo, instale las dependencias y corra el servidor
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+git clone https://github.com/ChristhianSM/vinco-frontend-reservation
+cd vinco-frontend-reservation
+npm i
+npm run start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### LICENCIA
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Licencia MIT Copyright (c) 2022, Christhian Silupú Moscol.
