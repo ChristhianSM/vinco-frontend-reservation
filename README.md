@@ -33,18 +33,16 @@ Aplicacion web donde podrás reservar hoteles de diferentes partes del Perú, po
 | date-fns 2.29.3 | Para manejo de Fechas. |
 | axios 1.1.3 | Para realizar peticiones fetch. |
 
-
+gi
 ## Demo: 
 
 <div align="center" style="margin-bottom:30px">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/login.JPG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/perfil.JPG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/home.JPG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/descProduct.JPG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/categories.JPG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/shopping-cart.JPG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/payment.JPG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/ecommerce-electro-store/blob/main/src/assets/demo/form-shopping.JPG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/vinco-frontend-reservation/blob/main/src/assets/images/demo1.PNG?raw=true" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/vinco-frontend-reservation/blob/main/src/assets/images/demo2.PNG?raw=true" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/vinco-frontend-reservation/blob/main/src/assets/images/demo3.PNG?raw=true" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/vinco-frontend-reservation/blob/main/src/assets/images/demo4.PNG?raw=true" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/vinco-frontend-reservation/blob/main/src/assets/images/demo5.PNG?raw=true" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/vinco-frontend-reservation/blob/main/src/assets/images/demo6.PNG?raw=true" width="400" title="hover text">
 </div>
 
 
