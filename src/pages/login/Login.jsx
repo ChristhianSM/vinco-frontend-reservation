@@ -1,8 +1,23 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { colors } from '../../assets/colors';
 import { useAuth } from '../../context/AuthContext/useAuth';
 
+const Navbar = styled.div`
+  height: 50px;
+  background-color: ${colors.background};
+  display: flex;
+  justify-content: center;
+`
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 1024px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
 const LoginWrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -53,25 +68,34 @@ export const Login = () => {
     }
   };
   return (
-    <LoginWrapper>
-      <Container>
-        <Input
-          type="text"
-          placeholder="username"
-          id="username"
-          onChange={handleChange}
-        />
-        <Input
-          type="password"
-          placeholder="password"
-          id="password"
-          onChange={handleChange}
-        />
-        <Button disabled={loading} onClick={handleClick} >
-          Login
-        </Button>
-        {error && <span>{error.message}</span>}
-      </Container>
-    </LoginWrapper>
+    <>
+      <Navbar>
+        <Wrapper>
+            <Link to={"/"}>
+              <h1 style={{ color: "white"}}>VincoReservation</h1>
+            </Link>
+          </Wrapper> 
+      </Navbar>
+      <LoginWrapper>
+        <Container>
+          <Input
+            type="text"
+            placeholder="username"
+            id="username"
+            onChange={handleChange}
+          />
+          <Input
+            type="password"
+            placeholder="password"
+            id="password"
+            onChange={handleChange}
+          />
+          <Button disabled={loading} onClick={handleClick} >
+            Login
+          </Button>
+          {error && <span>{error.message}</span>}
+        </Container>
+      </LoginWrapper>
+    </>
   )
 }

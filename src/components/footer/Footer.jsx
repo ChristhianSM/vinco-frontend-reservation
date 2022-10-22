@@ -26,46 +26,46 @@ const Footer = () => {
     <Wrapper>
       <Lists>
         <List>
-          <ListItem>Countries</ListItem>
-          <ListItem>Regions</ListItem>
-          <ListItem>Cities</ListItem>
-          <ListItem>Districts</ListItem>
-          <ListItem>Airports</ListItem>
-          <ListItem>Hotels</ListItem>
+          <ListItem>Paises</ListItem>
+          <ListItem>Regiones</ListItem>
+          <ListItem>Ciudades</ListItem>
+          <ListItem>Distritos</ListItem>
+          <ListItem>Aeropuertos</ListItem>
+          <ListItem>Hoteles</ListItem>
         </List>
         <List>
-          <ListItem>Homes </ListItem>
-          <ListItem>Apartments </ListItem>
-          <ListItem>Resorts </ListItem>
+          <ListItem>Casas </ListItem>
+          <ListItem>Departamentos </ListItem>
+          <ListItem>Centros Turisticos </ListItem>
           <ListItem>Villas</ListItem>
-          <ListItem>Hostels</ListItem>
-          <ListItem>Guest houses</ListItem>
+          <ListItem>Hostales</ListItem>
+          <ListItem>Casas de huéspedes</ListItem>
         </List>
         <List>
-          <ListItem>Unique places to stay </ListItem>
-          <ListItem>Reviews</ListItem>
-          <ListItem>Unpacked: Travel articles </ListItem>
-          <ListItem>Travel communities </ListItem>
-          <ListItem>Seasonal and holiday deals </ListItem>
+          <ListItem>Lugares únicos para quedarse </ListItem>
+          <ListItem>Reseñas</ListItem>
+          <ListItem>Desempaquetado: artículos de viaje </ListItem>
+          <ListItem>Comunidades de viajes </ListItem>
+          <ListItem>Ofertas de temporada y vacaciones</ListItem>
         </List>
         <List>
-          <ListItem>Car rental </ListItem>
-          <ListItem>Flight Finder</ListItem>
-          <ListItem>Restaurant reservations </ListItem>
-          <ListItem>Travel Agents </ListItem>
+          <ListItem>Alquiler de coches </ListItem>
+          <ListItem>Buscador de Vuelos</ListItem>
+          <ListItem>Reservacion de restaurantes </ListItem>
+          <ListItem>Agente de viajes </ListItem>
         </List>
         <List>
-          <ListItem>Curtomer Service</ListItem>
-          <ListItem>Partner Help</ListItem>
-          <ListItem>Careers</ListItem>
-          <ListItem>Sustainability</ListItem>
-          <ListItem>Press center</ListItem>
-          <ListItem>Safety Resource Center</ListItem>
-          <ListItem>Investor relations</ListItem>
-          <ListItem>Terms & conditions</ListItem>
+          <ListItem>Servicio de atención al cliente</ListItem>
+          <ListItem>Ayuda para socios</ListItem>
+          <ListItem>Carreras</ListItem>
+          <ListItem>Sustentabilidad</ListItem>
+          <ListItem>Centro de Prensa</ListItem>
+          <ListItem>Centro de recursos de seguridad</ListItem>
+          <ListItem>Relaciones con inversionistas</ListItem>
+          <ListItem>Terminos y condiciones</ListItem>
         </List>
       </Lists>
-      <div className="fText">Copyright © 2022 Lamabooking.</div>
+      <div className="fText">Copyright © 2022 Christhian Silupù Moscol.</div>
     </Wrapper>
   );
 };

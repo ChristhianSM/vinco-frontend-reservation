@@ -43,11 +43,11 @@ const MailInputContainer = styled.div`
 const MailList = () => {
   return (
     <Wrapper>
-      <MailTitle>Save time, save money!</MailTitle>
-      <span className="mailDesc">Sign up and we'll send the best deals to you</span>
+      <MailTitle>Ahorre tiempo, ahorre dinero!</MailTitle>
+      <span className="mailDesc"> Regístrate y te enviaremos las mejores ofertas</span>
       <MailInputContainer>
-        <input type="text" placeholder="Your Email" />
-        <button>Subscribe</button>
+        <input type="text" placeholder="Tu Email" />
+        <button>Suscribete</button>
       </MailInputContainer>
     </Wrapper>
   )

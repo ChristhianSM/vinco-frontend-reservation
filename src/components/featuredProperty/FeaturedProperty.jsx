@@ -46,6 +46,8 @@ const FpRating = styled.div`
 const FeaturedProperties = () => {
 
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+  console.log(data);
+
   return (
     <Wrapper>
       { loading 
@@ -59,12 +61,12 @@ const FeaturedProperties = () => {
               />
               <FpName>{ hotel.name }</FpName>
               <FpCity>{ hotel.city }</FpCity>
-              <FpPrice>Starting from $ { hotel.cheapesPrice }</FpPrice>
+              <FpPrice>Precios desde $ { hotel.cheapesPrice }</FpPrice>
               {
                 hotel.rating  &&
                 <FpRating>
                   <button>{ hotel.rating }</button>
-                  <span>Excellent</span>
+                  <span> Excelente </span>
                 </FpRating>
               }
             </FpItem>

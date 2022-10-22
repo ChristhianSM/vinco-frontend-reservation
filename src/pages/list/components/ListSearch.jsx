@@ -26,13 +26,13 @@ export const ListSearch = ({
 
   return (
     <Styled.ListSearch>
-      <Styled.ListTitle>Search</Styled.ListTitle>
+      <Styled.ListTitle>Buscar</Styled.ListTitle>
       <Styled.ListItem>
-        <label>Destination</label>
+        <label>Destino/Nombre del alojamiento:</label>
         <input 
           placeholder={destination} 
           type="text"
-          name = "destination"
+          name = "Destino"
           onChange={ (e) => setDestination(e.target.value) }
           value = { destination }
         />
@@ -53,11 +53,11 @@ export const ListSearch = ({
         )}
       </Styled.ListItem>
       <Styled.ListItem>
-        <label>Options</label>
+        <label>Optiones</label>
         <Styled.ListOptions>
           <Styled.ListOptionItem>
             <span className="lsOptionText">
-              Min price <small>per night</small>
+              Precio Minimo <small>por noche</small>
             </span>
             <Styled.ListOptionInput
               name = "min"
@@ -67,7 +67,7 @@ export const ListSearch = ({
           </Styled.ListOptionItem>
           <Styled.ListOptionItem>
             <span className="lsOptionText">
-              Max price <small>per night</small>
+              Precio Maximo <small>por noche</small>
             </span>
             <Styled.ListOptionInput
               name = "max"
@@ -76,11 +76,10 @@ export const ListSearch = ({
             />
           </Styled.ListOptionItem>
           <Styled.ListOptionItem>
-            <span className="lsOptionText">Adult</span>
-            <input
+            <span className="lsOptionText">Adultos</span>
+            <Styled.ListOptionInput
               type="number"
               min={1}
-              className="lsOptionInput"
               placeholder={options.adult}
               name = "adult"
               onChange={ handleInputFilter }
@@ -88,8 +87,8 @@ export const ListSearch = ({
             />
           </Styled.ListOptionItem>
           <Styled.ListOptionItem>
-            <span className="lsOptionText">Children</span>
-            <input
+            <span className="lsOptionText">Niños</span>
+            <Styled.ListOptionInput
               type="number"
               min={0}
               placeholder={options.children}
@@ -99,11 +98,10 @@ export const ListSearch = ({
             />
           </Styled.ListOptionItem>
           <Styled.ListOptionItem>
-            <span className="lsOptionText">Room</span>
-            <input
+            <span className="lsOptionText">Habitaciones</span>
+            <Styled.ListOptionInput
               type="number"
               min={1}
-              className="lsOptionInput"
               placeholder={options.room}
               name = "room"
               onChange={ handleInputFilter }
@@ -112,7 +110,7 @@ export const ListSearch = ({
           </Styled.ListOptionItem>
         </Styled.ListOptions>
       </Styled.ListItem>
-      <button onClick={ handleSearchFilters }>Search</button>
+      <button onClick={ handleSearchFilters }>Buscar</button>
     </Styled.ListSearch>
   )
 }

@@ -40,8 +40,12 @@ export const Navbar = () => {
         {
           user ? user.username :
           <NavItems>
-            <Button> Hazte una cuenta </Button>
-            <Button> Inicia Sesión </Button>
+            <Link to={"/register"}>
+              <Button> Hazte una cuenta </Button>
+            </Link>
+            <Link to={"/login"}>
+              <Button> Inicia Sesión </Button>
+            </Link>
           </NavItems>
         }
       </Wrapper>

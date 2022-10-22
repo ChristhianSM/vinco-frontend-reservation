@@ -2,7 +2,6 @@ import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
 import { faBed, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import { DateRange } from 'react-date-range'
 import { useNavigate } from 'react-router-dom'
 import { HeaderListItem } from './components/HeaderListItem'
 import { OptionsCounter } from './components/OptionsCounter'
@@ -11,14 +10,13 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns'
 import { useSearch } from '../../context/SearchContext/useSearch'
-import { useAuth } from '../../context/AuthContext/useAuth'
 
 const itemList = [
-  { id: 1, icon : faBed, title: "Stays"},
-  { id: 2, icon : faPlane, title: "Flights"},
-  { id: 3, icon : faCar, title: "Car rentals"},
-  { id: 4, icon : faBed, title: "Attractions"},
-  { id: 5, icon : faTaxi, title: "Airport taxis"},
+  { id: 1, icon : faBed, title: "Alojamiento"},
+  { id: 2, icon : faPlane, title: "Vuelos"},
+  { id: 3, icon : faCar, title: "Alquiler de choches"},
+  { id: 4, icon : faBed, title: "Atracciones turisticas"},
+  { id: 5, icon : faTaxi, title: "Taxis aeropuertos"},
 ];
 
 const listOptions = [
@@ -30,9 +28,8 @@ const listOptions = [
 export const Header = ({ type }) => {
 
   const { addSearch } = useSearch();
-  const { user } = useAuth();
 
-  const [destination, setDestination] = useState("");
+  const [destination, setDestination] = useState("Piura");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDates] = useState([
     {
@@ -94,6 +91,7 @@ export const Header = ({ type }) => {
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <Styled.HeaderSearchInput
                   type="text"
+                  value={destination}
                   placeholder="¿ A dondé vas ?"
                   onChange={(e) => setDestination(e.target.value)}
                 />

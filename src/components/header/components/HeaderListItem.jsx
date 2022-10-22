@@ -6,7 +6,7 @@ export const HeaderListItem = ({icon, title}) => {
   return (
     <Styled.HeaderListItem>
       <FontAwesomeIcon icon={icon} />
-      <span>Stays</span>
+      <span>{title}</span>
     </Styled.HeaderListItem>
   )
 }

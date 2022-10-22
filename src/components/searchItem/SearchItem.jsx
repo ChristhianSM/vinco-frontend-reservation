@@ -12,32 +12,32 @@ export const SearchItem = ({ hotel }) => {
       />
       <Styled.Description>
         <Styled.Title>{ name }</Styled.Title>
-        <Styled.Distance>{ distance }m from center</Styled.Distance>
-        <Styled.TaxiOp>Free airport taxi</Styled.TaxiOp>
+        <Styled.Distance>{ distance }m del Centro</Styled.Distance>
+        <Styled.TaxiOp>Taxi gratuito al aeropuerto</Styled.TaxiOp>
         <Styled.Subtitle>
-          Studio Apartment with Air conditioning
+        Apartamento estudio con aire acondicionado
         </Styled.Subtitle>
         <Styled.Features>
           { description }
         </Styled.Features>
-        <Styled.CancelOp>Free cancellation </Styled.CancelOp>
+        <Styled.CancelOp> Cancelación gratis </Styled.CancelOp>
         <Styled.CancelOpSubtitle>
-          You can cancel later, so lock in this great price today!
+          Puede cancelar más tarde, ¡así que asegure este excelente precio hoy!
         </Styled.CancelOpSubtitle>
       </Styled.Description>
       <Styled.Details>
         {
           rating &&
           <Styled.Rating>
-            <span>Excellent</span>
+            <span>Excelente</span>
             <button>{ rating }</button>
           </Styled.Rating>
         }
         <Styled.DetailsTexts>
           <Styled.Price>$ {cheapesPrice}</Styled.Price>
-          <Styled.TaxOp>Includes taxes and fees</Styled.TaxOp>
+          <Styled.TaxOp> Incluye impuestos y tasas</Styled.TaxOp>
           <Link to={`/hotels/${ hotel._id }`}>
-            <Styled.CheckButton>See availability</Styled.CheckButton>
+            <Styled.CheckButton>Ver disponibilidad</Styled.CheckButton>
           </Link>
         </Styled.DetailsTexts>
       </Styled.Details>

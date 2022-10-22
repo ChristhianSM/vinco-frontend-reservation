@@ -69,7 +69,7 @@ export const Reserve = ({ setOpenModal, hotelId }) => {
                   <Styled.Max>
                     Max people: <b>{item.maxPeople}</b>
                   </Styled.Max>
-                  <Styled.Price>{item.price}</Styled.Price>
+                  <Styled.Price>$ {item.price}</Styled.Price>
                 </Styled.Info>
                 <Styled.SelectRooms>
                   {item.roomNumbers.map((roomNumber) => (

@@ -220,17 +220,17 @@ export const Hotel = () => {
             </Slider>
           )}
           <HotelWrapper>
-            <ButtonReserve>Reserve Now!</ButtonReserve>
+            <ButtonReserve>Reserve Ahora!</ButtonReserve>
             <HotelTitle> { data.name } </HotelTitle>
             <HotelAddress>
               <FontAwesomeIcon icon={faLocationDot} />
               <span>{ data.address }</span>
             </HotelAddress>
             <HotelDistance>
-              Excellent location – ${ data.distance }m from center
+              Excelente Ubicacion – ${ data.distance }m del centro
             </HotelDistance>
             <HotelPriceHighlight>
-              Book a stay over ${ data.cheapesPrice } at this property and get a free airport taxi
+              Reserve una estancia ${ data.cheapesPrice } en esta propiedad y obtenga un taxi gratuito al aeropuerto
             </HotelPriceHighlight>
             <HotelImages>
               {data.photos?.map((photo, i) => (
@@ -249,15 +249,14 @@ export const Hotel = () => {
                 <HotelDesc> { data.description } </HotelDesc>
               </HotelDetailsTexts>
               <HotelDetailsPrice>
-                <h1>Perfect for a 9-night stay!</h1>
+                <h1>Perfecto para {days}-noches!</h1>
                 <span>
-                  Located in the real heart of Krakow, this property has an
-                  excellent location score of 9.8!
+                  { data.address }
                 </span>
                 <h2>
-                  <b>$ { days *  data.cheapesPrice * options.room }</b> ({days} nights)
+                  <b>$ { days *  data.cheapesPrice * options.room }</b> ({days} Noches)
                 </h2>
-                <button onClick={ handleReservation }>Reserve or Book Now!</button>
+                <button onClick={ handleReservation }>Reserve Ahora</button>
               </HotelDetailsPrice>
             </HotelDetails>
           </HotelWrapper>
