@@ -17,6 +17,7 @@ import { useSearch } from "../../context/SearchContext/useSearch";
 import { dayDifference } from "../../utils/helpers";
 import { useAuth } from "../../context/AuthContext/useAuth";
 import { Reserve } from "../../components/reserve/Reserve";
+import { BASE_URI } from "../../config";
 
 export const HotelContainer = styled.div`
   display: flex;
@@ -157,7 +158,7 @@ export const Hotel = () => {
   const { id } = useParams();
   const navigate =  useNavigate();
 
-  const { data, loading, error } = useFetch(`/hotels/${ id }`);
+  const { data, loading, error } = useFetch(`${BASE_URI}/hotels/${ id }`);
 
   // Obtenemos las fechas para poder hacer el calculo del precio 
   const days = dayDifference( dates[0].endDate, dates[0].startDate);

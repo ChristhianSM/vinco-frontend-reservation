@@ -8,10 +8,11 @@ import { useSearch } from "../../context/SearchContext/useSearch";
 import { getDatesInRange } from "../../utils/helpers";
 
 import * as Styled from './styles';
+import { BASE_URI } from "../../config";
 
 export const Reserve = ({ setOpenModal, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error } = useFetch(`/hotels/rooms/${hotelId}`);
+  const { data, loading, error } = useFetch(`${BASE_URI}/hotels/rooms/${hotelId}`);
   const { dates } =  useSearch();
 
   const alldates = getDatesInRange(dates[0].startDate, dates[0].endDate);

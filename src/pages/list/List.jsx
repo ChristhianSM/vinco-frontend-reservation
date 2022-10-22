@@ -7,6 +7,7 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { Header } from "../../components/header/Header";
 import { SearchItem } from "../../components/searchItem/SearchItem";
 import { useFetch } from "../../hooks/useFetch";
+import { BASE_URI } from "../../config";
 
 export const List = () => {
   const location = useLocation();
@@ -24,7 +25,7 @@ export const List = () => {
 
   const { min, max } = filters;
 
-  const { data, loading, error, reFetch } = useFetch(`/hotels?city=${ destination }&min=${min || 0}&max=${max || Infinity}`);
+  const { data, loading, error, reFetch } = useFetch(`${BASE_URI}/hotels?city=${ destination }&min=${min || 0}&max=${max || Infinity}`);
 
   const handleSearchFilters = () => {
     reFetch()

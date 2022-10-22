@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { BASE_URI } from "../../config";
 import { useFetch } from "../../hooks/useFetch";
 
 export const Wrapper = styled.div`
@@ -28,7 +29,7 @@ const FeaturedTitles = styled.div`
   left: 20px;
 `
 export const Featured = () => {
-  const { data, loading, error } = useFetch("/hotels/countByCity?cities=Piura,Lima,Iquitos");
+  const { data, loading, error } = useFetch(`${BASE_URI}/hotels/countByCity?cities=Piura,Lima,Iquitos`);
   return (
     <Wrapper>
       {

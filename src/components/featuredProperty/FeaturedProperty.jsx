@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { BASE_URI } from "../../config"
 import { useFetch } from "../../hooks/useFetch"
 
 const Wrapper = styled.div`
@@ -45,7 +46,7 @@ const FpRating = styled.div`
 `
 const FeaturedProperties = () => {
 
-  const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+  const { data, loading, error } = useFetch(`${BASE_URI}/hotels?featured=true&limit=4`);
   
   return (
     <Wrapper>

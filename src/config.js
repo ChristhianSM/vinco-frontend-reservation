@@ -1,0 +1,1 @@
+export const BASE_URI = "https://vinco-backend-reservation.herokuapp.com/api"
