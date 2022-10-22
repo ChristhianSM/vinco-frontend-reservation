@@ -54,7 +54,7 @@ export const Reserve = ({ setOpenModal, hotelId }) => {
     <Styled.Wrapper>
       <Styled.Container>
         {
-          loading ? "Loading" : 
+          loading || error ? "Loading" : 
           <>
             <Styled.Close
               icon={faCircleXmark}

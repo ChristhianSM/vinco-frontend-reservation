@@ -50,7 +50,7 @@ export const List = () => {
           />
           <Styled.ListResult>
             {
-              loading ? "Loading"
+              loading || error ? "Loading"
               : <>
                 { data.map( hotel => (
                   <SearchItem 

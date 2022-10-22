@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { colors } from '../../assets/colors'
 
 const StyledButton = styled.button`
   border: none;

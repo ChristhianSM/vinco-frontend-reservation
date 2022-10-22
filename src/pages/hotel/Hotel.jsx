@@ -12,7 +12,7 @@ import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 import styled from "@emotion/styled";
 import { useFetch } from "../../hooks/useFetch";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSearch } from "../../context/SearchContext/useSearch";
 import { dayDifference } from "../../utils/helpers";
 import { useAuth } from "../../context/AuthContext/useAuth";
@@ -196,7 +196,7 @@ export const Hotel = () => {
       <Navbar />
       <Header type="list" />
       {
-        loading ? "Loading"
+        loading || error ? "Loading"
         :
         <HotelContainer>
           {open && (

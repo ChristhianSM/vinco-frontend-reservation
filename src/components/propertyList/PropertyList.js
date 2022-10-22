@@ -42,7 +42,7 @@ const PropertyList = () => {
   return (
     <Wrapper>
       {
-        loading ? "Loading.."
+        loading || error ? "Loading.."
         : <>
         {
           data.length > 0 && images.map( (url, indice) => (

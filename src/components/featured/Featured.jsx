@@ -28,11 +28,11 @@ const FeaturedTitles = styled.div`
   left: 20px;
 `
 export const Featured = () => {
-  const { data, loading, error } = useFetch("/hotels/countByCity?cities=Piura,Lima,Iquitos")
+  const { data, loading, error } = useFetch("/hotels/countByCity?cities=Piura,Lima,Iquitos");
   return (
     <Wrapper>
       {
-        loading 
+        loading || error
         ? " Loading please wait"
         : <>
             <FeaturedItem>

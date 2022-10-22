@@ -46,11 +46,10 @@ const FpRating = styled.div`
 const FeaturedProperties = () => {
 
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
-  console.log(data);
-
+  
   return (
     <Wrapper>
-      { loading 
+      { loading || error
         ?  "Loading"
         : <>
           { data.map( hotel => (

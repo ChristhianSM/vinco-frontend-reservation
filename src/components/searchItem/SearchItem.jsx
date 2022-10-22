@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import * as Styled from './styles';
 
 export const SearchItem = ({ hotel }) => {
-  const { photos, name, distance, address, description, rating, rooms, cheapesPrice  } = hotel;
+  const { photos, name, distance, description, rating, cheapesPrice  } = hotel;
 
   return (
     <Styled.Wrapper>
