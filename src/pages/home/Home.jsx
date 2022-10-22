@@ -26,9 +26,9 @@ export const Home = () => {
       <Header />
       <HomeContainer>
         <Featured />
-        <HomeTitle> Browse by property type </HomeTitle>
+        <HomeTitle> Tenemos las siguientes tipos de propiedades </HomeTitle>
         <PropertyList />
-        <HomeTitle> Homes guests love </HomeTitle>
+        <HomeTitle> Los hoteles más reservados de Perú </HomeTitle>
         <FeaturedProperties />
         <MailList />
         <Footer />

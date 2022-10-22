@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { colors } from '../../assets/colors'
 import { useAuth } from '../../context/AuthContext/useAuth'
+import { Button } from '../UI/Button'
 
 const NavbarWrapper = styled.div`
   height: 50px;
@@ -23,13 +24,9 @@ const Logo = styled(Link)`
   color: white;
   Font-weight: 500;
 `
-const NavItems = styled.div``
-const NavButton = styled.button`
-  margin-left: 20px;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  color: ${colors.background};
+const NavItems = styled.div`
+  display: flex;
+  gap: 1rem;
 `
 
 export const Navbar = () => {
@@ -43,8 +40,8 @@ export const Navbar = () => {
         {
           user ? user.username :
           <NavItems>
-            <NavButton>Register</NavButton>
-            <NavButton>Login</NavButton>
+            <Button> Hazte una cuenta </Button>
+            <Button> Inicia Sesión </Button>
           </NavItems>
         }
       </Wrapper>

@@ -20,6 +20,7 @@ const ListImg = styled.img`
   object-fit: cover;
 `
 const ListTitles = styled.div`
+  text-transform: capitalize;
   h2 {
     font-size: 18px;
     color: #444;

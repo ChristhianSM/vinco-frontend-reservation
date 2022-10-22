@@ -85,30 +85,23 @@ export const Header = ({ type }) => {
         </Styled.HeaderList>
         {type !== "list" && (
           <>
-            <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
-            </h1>
+            <h1 className="headerTitle"> Hoteles en Perú </h1>
             <Styled.HeaderDescription>
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+            ¡Introduce tus fechas y elige entre 9.496 hoteles y otros alojamientos!
             </Styled.HeaderDescription>
-            {
-              !user && 
-              <Styled.HeaderButton>Sign in / Register</Styled.HeaderButton>
-            }
             <Styled.HeaderSearch>
               <Styled.HeaderSearchItem>
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <Styled.HeaderSearchInput
                   type="text"
-                  placeholder="Where are you going?"
+                  placeholder="¿ A dondé vas ?"
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </Styled.HeaderSearchItem>
               <Styled.HeaderSearchItem>
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <Styled.HeaderSearchText onClick={() => setOpenDate(!openDate)} >
-                  {`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}
+                  {`${format(dates[0].startDate, "MM/dd/yyyy")} hasta ${format(dates[0].endDate, "MM/dd/yyyy")}`}
                 </Styled.HeaderSearchText>
                 {openDate && (
                   <Styled.Date
@@ -126,7 +119,7 @@ export const Header = ({ type }) => {
                 <Styled.HeaderSearchText
                   onClick={() => setOpenOptions(!openOptions)}
                 >
-                  {`${options.adult} adult · ${options.children} children · ${options.room} room`}
+                  {`${options.adult} Adulto · ${options.children} Niño · ${options.room} Habitacion`}
                 </Styled.HeaderSearchText>
                 {openOptions && (
                   <Styled.Options>

@@ -42,7 +42,7 @@ export const Featured = () => {
             />
             <FeaturedTitles>
               <h1> Perú </h1>
-              <h2> { data[0] } properties</h2>
+              <h2> { data[0] } Propiedades </h2>
             </FeaturedTitles>
           </FeaturedItem>
           <FeaturedItem>
@@ -52,7 +52,7 @@ export const Featured = () => {
             />
             <FeaturedTitles>
               <h1>Argentina</h1>
-              <h2>{ data[1] } properties</h2>
+              <h2>{ data[1] } Propiedades</h2>
             </FeaturedTitles>
           </FeaturedItem>
           <FeaturedItem>
@@ -62,7 +62,7 @@ export const Featured = () => {
             />
             <FeaturedTitles>
               <h1> Colombia </h1>
-              <h2>{ data[2] } properties</h2>
+              <h2>{ data[2] } Propiedades</h2>
             </FeaturedTitles>
           </FeaturedItem>
         </>

@@ -3,7 +3,17 @@ import { DateRange } from "react-date-range"
 import { colors } from "../../assets/colors"
 
 export const HeaderWrapper = styled.header`
-  background-color: ${colors.background};
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: linear-gradient(rgba(27, 76, 137, 0.5), rgba(27, 76, 137, 0.5)), url('https://t-cf.bstatic.com/xdata/images/country/1680x560/1129.webp?k=259ee71b6f2669678d531d58319b6dff094f791db5f26a7581b80adda4366536&o=');
   color: white;
   display: flex;
   justify-content: center;
@@ -12,7 +22,7 @@ export const HeaderWrapper = styled.header`
 export const Container = styled.div`
   width: 100%;
   max-width: 1024px;
-  margin: 20px 0px 100px 0px;
+  margin: 20px 0px 50px 0px;
   &.list-mode {
     margin: 20px 0px 0px 0px;
   }
